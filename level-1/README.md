@@ -13,3 +13,11 @@ HTML code is located in `index.html`, which dynamically fetches Bootstrap 4 depe
 **Testing**
 
 Testing procedure for this specific task covers latest version of Chrome with following screen widths: 1280px, 768px, 640px, 320px. You can get extra points for pointing out solutions that won't work in IE11 with suggestions of how to resolve them – no actual work is required to fix issues though.
+
+**Answear to additional question**
+
+IE doeasn't support css `object-fit` property and html <picture>
+
+* `object-fit` fix for IE is available here: https://newbedev.com/ie-and-edge-fix-for-object-fit-cover and it's about positioning image absolute in the container and placing it in the center.
+* <picture> can be set with polyfill such as https://scottjehl.github.io/picturefill/
+* all issues might be simply solved by stop using IE if it's possible; the browser's going out of support for certain operating systems starting June 15, 2022
