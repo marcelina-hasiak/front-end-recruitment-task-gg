@@ -1,40 +1,59 @@
 {# Variables:
     - title
     - box
-        - title
         - content
+        - cta_button_label
         - images_default
-            - large | medium | small
-                - url
-                - width
-                - height
-        - images
-            - url
-            - width
-            - height
+          large | medium | small
+        - modal
+#}
+{# Variables:
+  - title
+  - box
+      - content
+      - cta_button_label
+      - images_default
+          - medium | small
+              - url
+      - modal
+          - button_cancel | button_agree
 #}
 
 {% extends "base.html" %}
 
-{% block content %}
-<h1>{{ title }}</h1>
-<h2>{{ box.title }}</h2>
-<p>{{ box.content }}</p>
- 
-<!-- Display all named images -->
-{% for size, image in box.images_default %}
-<figure style="display: inline-block">
-    <img src="{{ image.url }}" alt="" style="max-width: 250px">
-    <figcaption>Image size: {{ size }}, {{ image.width }}x{{ image.height }}px</figcaption>
-</figure>
-{% endfor %}
-<hr>
-<!-- Display all images -->
-{% for key, image in box.images %}
-<figure style="display: inline-block">
-    <img src="{{ image.url }}" alt="" style="max-width: 250px">
-    <figcaption>Image key: {{ key }}, {{ image.width }}x{{ image.height }}px</figcaption>
-</figure>
-{% endfor %}
+{% block image %}
+<picture>
+  <source srcset="{{ box.images_default.medium.url }}" media="(min-width: 576px)"/>
+  <img src="{{ box.images_default.small.url }}"
+  alt="Sunset over tropical beach.">
+</picture>
+{% endblock %}
 
+{% block text %}
+<div class="cta-wrapper">
+  <h1 class="cta-title">{{ title }}</h1>
+  <p class="cta-paragraph">{{ box.content }}</p>
+  <button class="button cta-button" type="button" data-toggle="modal" data-target="#exampleModal">{{box.cta_button_label}}</button>
+</div>
+{% endblock %}
+
+{% block modal %}
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>{{ box.content }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="modal-button--cancel" data-dismiss="modal">{{box.modal.button_cancel}}</button>
+        <button type="button" class="modal-button--agree">{{box.modal.button_agree}}</button>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

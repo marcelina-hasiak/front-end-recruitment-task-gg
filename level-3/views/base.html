@@ -6,18 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Final CSS -->
-    <link rel="stylesheet" href="assets/dist/custom.css?cb=1566213680541">
-
+    <link rel="stylesheet" href="assets/dist/custom.css?cb=1636487141831">
+    
     <title>Hello!</title>
   </head>
   <body>
 
     <div class="container">
-        <div class="row">
+        <div class="row no-gutters">
             <div class="col">
-                {% block content %}{% endblock %}
+              {% block image %}{% endblock %}
+            </div>
+            <div class="col">
+              {% block text %}{% endblock %}
             </div>
         </div>
+        {% block modal %}{% endblock %}
     </div>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -26,6 +30,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <!-- Final JS -->
-    <script src="assets/dist/all.js?cb=1566213680541"></script>
+    <script src="assets/dist/all.js?cb=1636487141831"></script>
   </body>
 </html>

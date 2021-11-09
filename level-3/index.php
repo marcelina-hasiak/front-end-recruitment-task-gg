@@ -3,35 +3,23 @@
 include_once 'vendor/autoload.php';
 
 $content = [
-    'title' => 'Welcome to your Frontend developer recruitment task!',
+    'title' => 'Lorem Ipsum',
     'box' => [
-        'title' => 'Ultrices dui sapien eget mi',
-        'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet cursus sit amet dictum sit. Augue ut lectus arcu bibendum at varius vel. Urna neque viverra justo nec ultrices dui sapien. Nunc sed id semper risus. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et netus. Sit amet facilisis magna etiam tempor orci. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla. Bibendum arcu vitae elementum curabitur vitae nunc sed velit dignissim. Nec nam aliquam sem et. Cursus mattis molestie a iaculis at.',
+        'content' => 'Lorem ipsum dolor sit amet, consectetur adipis scing elit. Pellentesque ac nisi felis. Suspendisse ut
+        finibus augue.',
+        'cta_button_label' => 'Button',
+        'modal' => [
+            'button_cancel' => 'no',
+            'button_agree' => 'yes',
+        ],
         'images_default' => [
-            'large' => [
-                'url' => 'assets/images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_1400.jpg',
-                'width' => 1400,
-                'height' => 931
-            ],
             'medium' => [
-                'url' => 'assets/images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_ar_16_9,c_fill,g_auto__c_scale,w_720.jpg',
-                'width' => 720,
-                'height' => 405
+                'url' => 'assets/images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_784.jpg'
             ],
             'small' => [
-                'url' => 'assets/images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_480.jpg',
-                'width' => 480,
-                'height' => 319
+                'url' => 'assets/images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_ar_16_9,c_fill,g_auto__c_scale,w_596.jpg'
             ],
-        ],
-        'images' => array_map(function ($src) {
-            list($width, $height) = getimagesize($src);
-            return [
-                'url' => $src,
-                'width' => $width,
-                'height' => $height
-            ];
-        }, glob("assets/images/*.jpg"))
+        ]
     ]
 ];
 
